@@ -1,0 +1,44 @@
+{% extends "baseAdmin.html" %}
+{% load static %}
+
+{% block content %}
+<form  method="post">{% csrf_token %}
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-content text-center">
+                <h5>¿Esta seguro de eliminar al estudiante ?</h5>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>Identificacion</th>
+                                <th>Ingles</th>
+                                <th>Lectura Critica</th>
+                                <th>Razonamiento <br>Cuantitativo</th>
+                                <th>Competencias <br>Ciudadanas</th>
+                                <th>Comunicacion <br>Escrita</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">{{object.pk}}</td>
+                                <td>{{object.identificacion}}</td>
+                                <td>{{object.ingles}}</td>
+                                <td>{{object.lecturacritica}}</td>
+                                <td>{{object.razonamiento}}</td>
+                                <td>{{object.competencias}}</td>
+                                <td>{{object.escrito}}</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <input type="submit" class='btn btn-danger btn-fill' value = "Eliminar" onclick="demo.showSwal('success-message')"  >
+                <a class='btn btn-warning btn-fill' href="{% url 'lista_estudiantes' %}">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock content%}
