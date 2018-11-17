@@ -11,45 +11,36 @@
                         <i class="material-icons">book</i>
                     </div>
                     <div class="card-content">
-                        <h4 class="card-title">Crear un editorial</h4>
+                        <h4 class="card-title">Crear un libro</h4>
                         
                         <div class="form-group label-floating">
-                            <label class="control-label">NIT</label>
-                            {{form.nit}}
+                            <label class="control-label">Titulo</label>
+                            {{form.titulo}}
                         </div>
                         <div class="form-group label-floating">
-                            <label class="control-label">Nombre</label>
-                            {{form.nombre}}
+                            <label class="control-label">Autor</label>
+                            {{form.autor}}
                         </div>
                         <div class="form-group label-floating">
-                            <label class="control-label">Direccion</label>
-                            {{form.direccion}}
+                            <label class="control-label">Categoria</label>
+                            {{form.categoria}}
                         </div>
                         <div class="form-group label-floating">
-                            <label class="control-label">Telefono</label>
-                            {{form.telefono}}
-                        </div>
-                        
-                        <div class="form-group label-floating">
-                            <label class="control-label">Email</label>
-                            {{form.email}}
+                            <label class="control-label">Editorial</label>
+                            {{form.editorial}}
                         </div>
                         <div class="form-group label-floating">
-                            <label class="control-label">Sitio Web</label>
-                            {{form.sitioweb}}
+                            <label class="control-label">Paginas</label>
+                            {{form.paginas}}
                         </div>
-                        
                         <div class="form-group label-floating">
-                            <label class="control-label">Seleccionar Libros de la editorial</label>
-                            {{form.libros}}
-                            
+                            <label class="control-label">Fragmento</label>
+                            {{form.fragmento}}
                         </div>
-                        
-                        {{form.imagen}}
-                        
-                        
+    
+                    
                         <button type="submit" class="btn btn-fill btn-rose">Enviar</button>
-                        <a href="{% url 'lista_editorial' %}" class="btn btn-danger">Cancelar</a>
+                        <a href="{% url 'lista_libro' %}" class="btn btn-danger">Cancelar</a>
                         
                     </div>
                 </div>

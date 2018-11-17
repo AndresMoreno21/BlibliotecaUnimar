@@ -792,7 +792,7 @@ demo = {
 
     	}else if(type == 'success-message'){
         	swal({
-                title: "Estudiante Eliminado",
+                title: "Editorial Eliminado",
                 text: "",
                 buttonsStyling: false,
                 confirmButtonClass: "btn btn-success",

@@ -1,0 +1,56 @@
+{% extends "baseAdmin.html" %}
+{% load static %}
+
+{% block content %}
+<div class="nav-center">
+    <ul class="nav nav-pills nav-pills-warning nav-pills-icons" role="tablist">
+        <!--
+            color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+        -->
+        <li>
+            <a class="btn btn-warning" href="{% url 'lista_editorial' %}" >
+                <i class="material-icons">info</i> Volver a Editoriales
+            </a>
+        </li>
+        
+    </ul>
+</div>
+{% for p in object.libros.all %}
+<div class="col-md-4">
+    <div class="card card-testimonial">
+        <div class="icon">
+            <i class="material-icons">import_contacts</i>
+            <h4 class="card-title">{{p.titulo}}</h4>
+        </div>
+        <div class="card-content">
+            <h5 class="card-description">
+                <div class="form-group label-floating">
+                    <label class="control-label">autor</label>
+                    {{p.autor}}
+                </div>
+                
+                <div class="form-group label-floating">
+                    <label class="control-label">categoria</label>
+                    {{p.categoria}}
+                </div>
+                <div class="form-group label-floating">
+                    <label class="control-label">editorial</label>
+                    {{p.editorial}}
+                </div>
+                <div class="form-group label-floating">
+                    <label class="control-label">paginas</label>
+                    {{p.paginas}}
+                </div>
+                <div class="form-group label-floating">
+                    <label class="control-label">fragmento</label>
+                    {{p.fragmento}}
+                </div>
+            </h5>
+        </div>
+    </div>
+</div>
+
+
+
+{% endfor %}
+{% endblock content%}

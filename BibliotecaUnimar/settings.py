@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'multiselectfield',
     'Biblioteca',
 ]
 
@@ -118,7 +119,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/Biblioteca/BibliotecaUnimar/templates/'
+STATIC_URL = '/Biblioteca/BibliotecaUnimar/templates/static/'
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
@@ -126,8 +127,6 @@ STATICFILES_DIRS = (
     os.path.join("C:/Biblioteca/BibliotecaUnimar/templates",'static'),
 )
 
-MEDIA_ROOT=os.path.join(BASE_DIR,'media/')
+MEDIA_ROOT=os.path.join(BASE_DIR,'C:/Biblioteca/BibliotecaUnimar/templates/static/')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'media'),
-)
+

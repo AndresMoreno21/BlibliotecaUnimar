@@ -3,14 +3,33 @@
 
 {% block content %}
 {% for p in editorial_list.all %}
+
 <div class="col-md-4">
-    <div class="card card-testimonial">
-        <div class="icon">
-            <i class="material-icons">import_contacts</i>
-            <h4 class="card-title">{{p.nombre}}</h4>
+    <div class="card card-product">
+        <div class="card-image" data-header-animation="true">
+            <a href="#pablo">
+                <img class="img" src="{% static p.imagen.url %}" style="width:298px;height:300px">
+            </a>
         </div>
         <div class="card-content">
-            <h5 class="card-description">
+            <div class="card-actions">
+                <a  class="btn btn-danger btn-simple fix-broken-card">
+                    <i class="material-icons">build</i> Fix Header!
+                </a>
+                <a  class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="Lista de libros" href="{% url 'lista_libro_editorial' p.pk %}">
+                    <i class="material-icons">art_track</i> Ver Libros
+                </a>
+                <a  class="btn btn-success btn-simple" rel="tooltip" data-placement="bottom" title="Editar" href="{% url 'editorial_editar' p.pk %}">
+                    <i class="material-icons">edit</i> 
+                </a>
+                <a  class="btn btn-danger btn-simple" rel="tooltip" data-placement="bottom" title="Borrar" href="{% url 'editorial_borrar' p.pk %}">
+                    <i class="material-icons">close</i> 
+                </a>
+            </div>
+            <h4 class="card-title">
+                {{p.nombre}}
+            </h4>
+            <div class="card-description">
                 <div class="form-group label-floating">
                     <label class="control-label">NIT</label>
                     {{p.nit}}
@@ -28,19 +47,15 @@
                     <label class="control-label">Email</label>
                     {{p.email}}
                 </div>
-
-                <a class="btn btn-success" href="#">Ver Libros</a>
-            </h5>
-
-            
-        </div>
-        <div class="footer">
-            <h6 class="category">{{p.sitioweb}}</h6>
-            <div class="card-avatar">
-                <img src="{% static p.imagen.url %}" >
             </div>
+        </div>
+        <div class="card-footer">
+            <h6 class="category">{{p.sitioweb}}</h6>
         </div>
     </div>
 </div>
+
+
+
 {% endfor %}
 {% endblock content%}
